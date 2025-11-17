@@ -157,12 +157,1291 @@
   // ============================
   // You can replace or expand this array.
   const radicals = [
-    { key: "犬", pinyin: "quǎn", meaning: "dog", examples: "狗 狠 狂" },
-    { key: "心", pinyin: "xīn", meaning: "heart; mind", examples: "想 怕 恨" },
-    { key: "言", pinyin: "yán", meaning: "speech; words", examples: "语 话 诗" },
-    { key: "木", pinyin: "mù", meaning: "wood; tree", examples: "林 果 森" },
-    { key: "火", pinyin: "huǒ", meaning: "fire", examples: "炎 烧 热" }
-  ];
+ {
+   "key": "一",
+   "pinyin": "yī",
+   "meaning": "One",
+   "examples": "丁 万 上 下"
+ },
+ {
+   "key": "丨",
+   "pinyin": "gǔn",
+   "meaning": "Line",
+   "examples": "个 中 丰 串 临"
+ },
+ {
+   "key": "丶",
+   "pinyin": "zhǔ",
+   "meaning": "Dot",
+   "examples": "丸 义 丹 为 主"
+ },
+ {
+   "key": "丿 乀 乁",
+   "pinyin": "piě",
+   "meaning": "Slash",
+   "examples": "乂 乃 久 乇 乎"
+ },
+ {
+   "key": "乙 乚",
+   "pinyin": "yǐ",
+   "meaning": "Second",
+   "examples": "九 乞 乩 乱"
+ },
+ {
+   "key": "亅",
+   "pinyin": "jué",
+   "meaning": "Hook",
+   "examples": "了 争 事"
+ },
+ {
+   "key": "二",
+   "pinyin": "èr",
+   "meaning": "Two",
+   "examples": "亍 于 云 五 亚"
+ },
+ {
+   "key": "亠",
+   "pinyin": "tóu",
+   "meaning": "Lid",
+   "examples": "亡 亢 交 产 京"
+ },
+ {
+   "key": "人 亻",
+   "pinyin": "rén",
+   "meaning": "Person",
+   "examples": "你 他 仕 仙 例"
+ },
+ {
+   "key": "儿",
+   "pinyin": "rén",
+   "meaning": "Legs",
+   "examples": "兀 元 兄 先 克"
+ },
+ {
+   "key": "入",
+   "pinyin": "rù",
+   "meaning": "Enter",
+   "examples": "內 全 氽"
+ },
+ {
+   "key": "八 丷",
+   "pinyin": "bā",
+   "meaning": "Eight",
+   "examples": "兮 公 兰 关 兴"
+ },
+ {
+   "key": "冂",
+   "pinyin": "jiōng",
+   "meaning": "Down box",
+   "examples": "内 冋 再 冏 最"
+ },
+ {
+   "key": "冖",
+   "pinyin": "mì",
+   "meaning": "Cover",
+   "examples": "写 军 农"
+ },
+ {
+   "key": "冫",
+   "pinyin": "bīng",
+   "meaning": "Ice",
+   "examples": "冰 况 冼 凊"
+ },
+ {
+   "key": "几",
+   "pinyin": "jǐ",
+   "meaning": "Table",
+   "examples": "凡 凤"
+ },
+ {
+   "key": "凵",
+   "pinyin": "qiǎn",
+   "meaning": "Open box",
+   "examples": "凶 凸 凹 出 击"
+ },
+ {
+   "key": "刂 刁 刀",
+   "pinyin": "dāo",
+   "meaning": "Knife",
+   "examples": "刅 分 切 划 刚"
+ },
+ {
+   "key": "力",
+   "pinyin": "lì",
+   "meaning": "Power",
+   "examples": "劝 办 加 务 动"
+ },
+ {
+   "key": "勹",
+   "pinyin": "bāo",
+   "meaning": "Wrap",
+   "examples": "勺 勾 匀 包"
+ },
+ {
+   "key": "匕",
+   "pinyin": "bǐ",
+   "meaning": "Ladle/Dagger",
+   "examples": "化 北 匙"
+ },
+ {
+   "key": "匚",
+   "pinyin": "fāng",
+   "meaning": "Right open box",
+   "examples": "匛 匤 匡 匢 匜"
+ },
+ {
+   "key": "匸",
+   "pinyin": "xì",
+   "meaning": "Hiding enclosure",
+   "examples": "匹 区 医 匼"
+ },
+ {
+   "key": "十",
+   "pinyin": "shí",
+   "meaning": "Ten",
+   "examples": "千 升 午 半"
+ },
+ {
+   "key": "卜",
+   "pinyin": "bǔ",
+   "meaning": "Divination",
+   "examples": "卟 占 卡 卢 卤"
+ },
+ {
+   "key": "卩",
+   "pinyin": "jié",
+   "meaning": "Seal/Joint",
+   "examples": "卫 卬 卯 印 却"
+ },
+ {
+   "key": "厂",
+   "pinyin": "hǎn",
+   "meaning": "Cliff/House",
+   "examples": "厄 厅 历 厉"
+ },
+ {
+   "key": "厶",
+   "pinyin": "mǒu/sī",
+   "meaning": "Private",
+   "examples": "去 县 参"
+ },
+ {
+   "key": "又",
+   "pinyin": "yòu",
+   "meaning": "Again",
+   "examples": "叉 友 双 发 受"
+ },
+ {
+   "key": "口",
+   "pinyin": "kǒu",
+   "meaning": "Mouth",
+   "examples": "吃 叹 品 吵 叫"
+ },
+ {
+   "key": "囗",
+   "pinyin": "wéi",
+   "meaning": "Enclosure",
+   "examples": "围 团 国 囚 困"
+ },
+ {
+   "key": "土",
+   "pinyin": "tǔ",
+   "meaning": "Earth",
+   "examples": "在 地 城 地 型"
+ },
+ {
+   "key": "士",
+   "pinyin": "shì",
+   "meaning": "Scholar",
+   "examples": "壮 仕 壬 声 志"
+ },
+ {
+   "key": "夂",
+   "pinyin": "zhǐ",
+   "meaning": "Go",
+   "examples": "处 复 备 冬"
+ },
+ {
+   "key": "夊",
+   "pinyin": "suī",
+   "meaning": "Go slowly",
+   "examples": "夌 复 変"
+ },
+ {
+   "key": "夕",
+   "pinyin": "xī",
+   "meaning": "Night",
+   "examples": "外 多 夜 夠"
+ },
+ {
+   "key": "大",
+   "pinyin": "dà",
+   "meaning": "Big",
+   "examples": "天 太 夫 央 头"
+ },
+ {
+   "key": "女",
+   "pinyin": "nǚ",
+   "meaning": "Woman",
+   "examples": "妈 好 始 姓 安"
+ },
+ {
+   "key": "子",
+   "pinyin": "zǐ",
+   "meaning": "Child",
+   "examples": "孔 字 季 学 孩"
+ },
+ {
+   "key": "宀",
+   "pinyin": "mián",
+   "meaning": "Roof",
+   "examples": "宁 它 安 定 容"
+ },
+ {
+   "key": "寸",
+   "pinyin": "cùn",
+   "meaning": "Inch",
+   "examples": "对 寺 寻 寿 导"
+ },
+ {
+   "key": "小 ⺌ ⺍",
+   "pinyin": "xiǎo",
+   "meaning": "Small",
+   "examples": "少 尔 尚 尝"
+ },
+ {
+   "key": "尢",
+   "pinyin": "wāng",
+   "meaning": "Lame",
+   "examples": "尤 尧 就 尴 尬"
+ },
+ {
+   "key": "尸",
+   "pinyin": "shī",
+   "meaning": "Corpse",
+   "examples": "尼 尽 局 居 层"
+ },
+ {
+   "key": "屮",
+   "pinyin": "chè",
+   "meaning": "Sprout",
+   "examples": "屯 屰"
+ },
+ {
+   "key": "山",
+   "pinyin": "shān",
+   "meaning": "Mountain",
+   "examples": "岀 峰 岁 岛 岳"
+ },
+ {
+   "key": "川 巛",
+   "pinyin": "chuān",
+   "meaning": "River",
+   "examples": "州 巡 巢"
+ },
+ {
+   "key": "工",
+   "pinyin": "gōng",
+   "meaning": "Work",
+   "examples": "左 巧 巩 巫"
+ },
+ {
+   "key": "己",
+   "pinyin": "jǐ",
+   "meaning": "Oneself",
+   "examples": "纪 记 忌 改"
+ },
+ {
+   "key": "巾",
+   "pinyin": "jīn",
+   "meaning": "Towel",
+   "examples": "巿 币 市 师"
+ },
+ {
+   "key": "干",
+   "pinyin": "gān/gàn",
+   "meaning": "Dry/Do",
+   "examples": "平 年 并 幸"
+ },
+ {
+   "key": "幺",
+   "pinyin": "yāo",
+   "meaning": "Youngest",
+   "examples": "幻 幼 幽"
+ },
+ {
+   "key": "广",
+   "pinyin": "guǎng",
+   "meaning": "Shelter",
+   "examples": "座 庄 床 店"
+ },
+ {
+   "key": "廴",
+   "pinyin": "yǐn",
+   "meaning": "Stride",
+   "examples": "延 廷 建"
+ },
+ {
+   "key": "廾",
+   "pinyin": "gǒng",
+   "meaning": "Hands joined",
+   "examples": "开 异 弃 弄"
+ },
+ {
+   "key": "弋",
+   "pinyin": "yì",
+   "meaning": "Shoot with a bow",
+   "examples": "式 弑"
+ },
+ {
+   "key": "弓",
+   "pinyin": "gōng",
+   "meaning": "Bow",
+   "examples": "弟 引 张 弘 弯"
+ },
+ {
+   "key": "彐 彑",
+   "pinyin": "jì",
+   "meaning": "Snout",
+   "examples": "归 当 录 彖"
+ },
+ {
+   "key": "彡",
+   "pinyin": "shān",
+   "meaning": "Hair",
+   "examples": "形 彦 彩 影"
+ },
+ {
+   "key": "彳",
+   "pinyin": "chì",
+   "meaning": "Step",
+   "examples": "行 徐 律 很 往"
+ },
+ {
+   "key": "心 忄",
+   "pinyin": "xīn",
+   "meaning": "Heart",
+   "examples": "必 忆 忘 忙 快"
+ },
+ {
+   "key": "戈",
+   "pinyin": "gē",
+   "meaning": "Spear",
+   "examples": "我 成 戒 战 或"
+ },
+ {
+   "key": "戶 户",
+   "pinyin": "hù",
+   "meaning": "Door",
+   "examples": "房 所 扁 扇 扉"
+ },
+ {
+   "key": "扌",
+   "pinyin": "shǒu",
+   "meaning": "Hand",
+   "examples": "扔 扬 扛 扱 抱"
+ },
+ {
+   "key": "支",
+   "pinyin": "zhī",
+   "meaning": "Branch",
+   "examples": "攰 攱 攲"
+ },
+ {
+   "key": "攴 攵",
+   "pinyin": "pū",
+   "meaning": "Rap/Beat",
+   "examples": "收 改 政 故 敌"
+ },
+ {
+   "key": "文",
+   "pinyin": "wén",
+   "meaning": "Script",
+   "examples": "齐 斌 斑 斓 斋"
+ },
+ {
+   "key": "斗",
+   "pinyin": "dǒu",
+   "meaning": "Vessel",
+   "examples": "料 斛 斟 斜"
+ },
+ {
+   "key": "斤",
+   "pinyin": "jīn",
+   "meaning": "Axe",
+   "examples": "斧 断 斯 新 斩"
+ },
+ {
+   "key": "方",
+   "pinyin": "fāng",
+   "meaning": "Square",
+   "examples": "施 旁 旋 旅 旗"
+ },
+ {
+   "key": "无/旡",
+   "pinyin": "wú/jì",
+   "meaning": "Not/Choke on something eaten",
+   "examples": "既"
+ },
+ {
+   "key": "日",
+   "pinyin": "rì",
+   "meaning": "Sun",
+   "examples": "时 早 明 是 晩"
+ },
+ {
+   "key": "曰",
+   "pinyin": "yuē",
+   "meaning": "Say",
+   "examples": "曲 更 曾"
+ },
+ {
+   "key": "月",
+   "pinyin": "yuè",
+   "meaning": "Moon",
+   "examples": "服 朋 青 朝 明"
+ },
+ {
+   "key": "木 朩",
+   "pinyin": "mù",
+   "meaning": "Tree",
+   "examples": "森 林 相 根 本"
+ },
+ {
+   "key": "欠",
+   "pinyin": "qiàn",
+   "meaning": "Lack",
+   "examples": "次 欢 欣 歆 欲"
+ },
+ {
+   "key": "止",
+   "pinyin": "zhǐ",
+   "meaning": "Stop",
+   "examples": "正 此 步 武 歧"
+ },
+ {
+   "key": "歹",
+   "pinyin": "dǎi",
+   "meaning": "Death",
+   "examples": "死 歾 殃 殉 殆"
+ },
+ {
+   "key": "殳",
+   "pinyin": "shū",
+   "meaning": "Weapon",
+   "examples": "段 殷 殴"
+ },
+ {
+   "key": "母",
+   "pinyin": "mǔ",
+   "meaning": "Mother",
+   "examples": "每 毒"
+ },
+ {
+   "key": "比",
+   "pinyin": "bǐ",
+   "meaning": "Compare",
+   "examples": "毕 庇 毙"
+ },
+ {
+   "key": "毛",
+   "pinyin": "máo",
+   "meaning": "Fur",
+   "examples": "毫 毡 笔 毯 毫"
+ },
+ {
+   "key": "氏",
+   "pinyin": "shì",
+   "meaning": "Clan",
+   "examples": "民 氓"
+ },
+ {
+   "key": "气",
+   "pinyin": "qì",
+   "meaning": "Steam",
+   "examples": "氲 氧 氢"
+ },
+ {
+   "key": "水 氵 氺",
+   "pinyin": "shuǐ",
+   "meaning": "Water",
+   "examples": "海 河 湖 江 洗"
+ },
+ {
+   "key": "火 灬",
+   "pinyin": "huǒ",
+   "meaning": "Fire",
+   "examples": "灯 炎 热 点 然"
+ },
+ {
+   "key": "爪 爫",
+   "pinyin": "zhǎo/zhuǎ",
+   "meaning": "Claw",
+   "examples": "爬 爱"
+ },
+ {
+   "key": "父",
+   "pinyin": "fù",
+   "meaning": "Father",
+   "examples": "爷 爸"
+ },
+ {
+   "key": "爻",
+   "pinyin": "yáo",
+   "meaning": "Lines on a trigram",
+   "examples": "爼 爽"
+ },
+ {
+   "key": "爿",
+   "pinyin": "pán",
+   "meaning": "Half of a tree trunk",
+   "examples": "牀"
+ },
+ {
+   "key": "片",
+   "pinyin": "qiáng",
+   "meaning": "Slice",
+   "examples": "版 牌"
+ },
+ {
+   "key": "牙",
+   "pinyin": "yá",
+   "meaning": "Tooth",
+   "examples": ""
+ },
+ {
+   "key": "牛 牜 ⺧",
+   "pinyin": "niú",
+   "meaning": "Cow",
+   "examples": "牟 牤 牧 物 牲"
+ },
+ {
+   "key": "犬 犭",
+   "pinyin": "quǎn",
+   "meaning": "Dog",
+   "examples": "犮 犯 犷 狂 狗"
+ },
+ {
+   "key": "玄",
+   "pinyin": "xuán",
+   "meaning": "Profound",
+   "examples": "率 玆"
+ },
+ {
+   "key": "王 玉",
+   "pinyin": "wáng/yù",
+   "meaning": "King/Jade",
+   "examples": "珍 现 琴 莹 玺"
+ },
+ {
+   "key": "瓜",
+   "pinyin": "guā",
+   "meaning": "Melon",
+   "examples": "瓢 瓣"
+ },
+ {
+   "key": "瓦",
+   "pinyin": "wǎ",
+   "meaning": "Tile",
+   "examples": "瓶 瓷 瓮"
+ },
+ {
+   "key": "甘",
+   "pinyin": "gān",
+   "meaning": "Sweet",
+   "examples": "甚 甜 某"
+ },
+ {
+   "key": "生",
+   "pinyin": "shēng",
+   "meaning": "Life",
+   "examples": "甠 甡 甥"
+ },
+ {
+   "key": "用",
+   "pinyin": "yòng",
+   "meaning": "Use",
+   "examples": "甬 甭 甫"
+ },
+ {
+   "key": "田",
+   "pinyin": "tián",
+   "meaning": "Field",
+   "examples": "男 甸 画 畅 界"
+ },
+ {
+   "key": "疋 𤴔",
+   "pinyin": "pǐ",
+   "meaning": "Foot",
+   "examples": "胥 疍 疏 疎"
+ },
+ {
+   "key": "疒",
+   "pinyin": "nè",
+   "meaning": "Sick",
+   "examples": "病 疔 疤 疫 疯"
+ },
+ {
+   "key": "癶",
+   "pinyin": "bō",
+   "meaning": "Unbalanced footsteps",
+   "examples": "癷 癸 登"
+ },
+ {
+   "key": "白",
+   "pinyin": "bái",
+   "meaning": "White",
+   "examples": "百 的 皇 皁 皓"
+ },
+ {
+   "key": "皮",
+   "pinyin": "pí",
+   "meaning": "Skin",
+   "examples": "皱 皲"
+ },
+ {
+   "key": "皿",
+   "pinyin": "mǐn",
+   "meaning": "Dish",
+   "examples": "盂 益 盆 监 盈"
+ },
+ {
+   "key": "目",
+   "pinyin": "mù",
+   "meaning": "Eye",
+   "examples": "盯 相 盲 看 眠"
+ },
+ {
+   "key": "矛",
+   "pinyin": "máo",
+   "meaning": "Spear",
+   "examples": "矜 䂊"
+ },
+ {
+   "key": "矢",
+   "pinyin": "shǐ",
+   "meaning": "Arrow",
+   "examples": "矣 知 矩 矫 矬"
+ },
+ {
+   "key": "石",
+   "pinyin": "shí",
+   "meaning": "Stone",
+   "examples": "码 破 硌 硏 硬"
+ },
+ {
+   "key": "示 礻",
+   "pinyin": "shì",
+   "meaning": "Spirit",
+   "examples": "礼 社 视 禁 祭"
+ },
+ {
+   "key": "禸",
+   "pinyin": "róu",
+   "meaning": "Rub",
+   "examples": "禹 禺 离"
+ },
+ {
+   "key": "禾",
+   "pinyin": "hé",
+   "meaning": "Grain",
+   "examples": "秀 秋 种 秒 租"
+ },
+ {
+   "key": "穴",
+   "pinyin": "xué",
+   "meaning": "Cave",
+   "examples": "穷 究 空 穿 突"
+ },
+ {
+   "key": "立",
+   "pinyin": "lì",
+   "meaning": "Stand",
+   "examples": "站 竞 章 竖 端"
+ },
+ {
+   "key": "竹 ⺮ ケ",
+   "pinyin": "zhú",
+   "meaning": "Bamboo",
+   "examples": "笑 笛 第 竿 等"
+ },
+ {
+   "key": "米",
+   "pinyin": "mǐ",
+   "meaning": "Rice",
+   "examples": "粮 类 粉 粤 籽"
+ },
+ {
+   "key": "糸 纟",
+   "pinyin": "sī",
+   "meaning": "Silk",
+   "examples": "红 纪 组 系 紧"
+ },
+ {
+   "key": "缶",
+   "pinyin": "fǒu",
+   "meaning": "Jar",
+   "examples": "缺 缸 罂"
+ },
+ {
+   "key": "网 罒 罓",
+   "pinyin": "wǎng",
+   "meaning": "Net",
+   "examples": "罗 罚 罢 罪"
+ },
+ {
+   "key": "羊 ⺶ ⺷",
+   "pinyin": "yáng",
+   "meaning": "Sheep",
+   "examples": "美 着 羞 群 羚"
+ },
+ {
+   "key": "羽",
+   "pinyin": "yǔ",
+   "meaning": "Feather",
+   "examples": "翠 翁 耀 翔"
+ },
+ {
+   "key": "老 耂",
+   "pinyin": "lǎo",
+   "meaning": "Old",
+   "examples": "者 耄 者 考"
+ },
+ {
+   "key": "而",
+   "pinyin": "ér",
+   "meaning": "And",
+   "examples": "耍 耐"
+ },
+ {
+   "key": "耒",
+   "pinyin": "lěi",
+   "meaning": "Plaw",
+   "examples": "耔 耗 耕 耘"
+ },
+ {
+   "key": "耳",
+   "pinyin": "ěr",
+   "meaning": "Ear",
+   "examples": "聊 聆 聒 联 耿"
+ },
+ {
+   "key": "聿",
+   "pinyin": "yù",
+   "meaning": "Brush",
+   "examples": "肃 肆 肄 肇"
+ },
+ {
+   "key": "肉 月",
+   "pinyin": "ròu",
+   "meaning": "Meat",
+   "examples": "肖 肘 肚 腐"
+ },
+ {
+   "key": "臣",
+   "pinyin": "chén",
+   "meaning": "Minister",
+   "examples": "卧 藏"
+ },
+ {
+   "key": "自",
+   "pinyin": "zì",
+   "meaning": "Oneself",
+   "examples": "臬 臭"
+ },
+ {
+   "key": "至",
+   "pinyin": "zhì",
+   "meaning": "Arrive",
+   "examples": "致 臻"
+ },
+ {
+   "key": "臼",
+   "pinyin": "jiù",
+   "meaning": "Mortar",
+   "examples": "臾 舀 舂"
+ },
+ {
+   "key": "舌",
+   "pinyin": "shé",
+   "meaning": "Tongue",
+   "examples": "舍 舐 舔"
+ },
+ {
+   "key": "舛",
+   "pinyin": "chuǎn",
+   "meaning": "Contrary",
+   "examples": "舜"
+ },
+ {
+   "key": "舟",
+   "pinyin": "zhōu",
+   "meaning": "Boat",
+   "examples": "航 船 般 舱 舫"
+ },
+ {
+   "key": "艮",
+   "pinyin": "gèn",
+   "meaning": "Mountain",
+   "examples": "良 艰 根 跟"
+ },
+ {
+   "key": "色",
+   "pinyin": "sè",
+   "meaning": "Color",
+   "examples": "艳"
+ },
+ {
+   "key": "艹",
+   "pinyin": "cǎo",
+   "meaning": "Grass",
+   "examples": "花 菜 茶 茬 草"
+ },
+ {
+   "key": "虍",
+   "pinyin": "hū",
+   "meaning": "Stripes on a tiger",
+   "examples": "虏 虎 虐 虔 虑"
+ },
+ {
+   "key": "虫",
+   "pinyin": "chóng",
+   "meaning": "Insect",
+   "examples": "蛇 蚊 蛋 蚤 蚀"
+ },
+ {
+   "key": "血",
+   "pinyin": "xuè",
+   "meaning": "Blood",
+   "examples": "恤 衅"
+ },
+ {
+   "key": "行",
+   "pinyin": "xíng",
+   "meaning": "Walk",
+   "examples": "衍 衔 街"
+ },
+ {
+   "key": "衣 衤",
+   "pinyin": "yī",
+   "meaning": "Clothes",
+   "examples": "表 袋 袓 衷 袄"
+ },
+ {
+   "key": "覀",
+   "pinyin": "yà",
+   "meaning": "Cover",
+   "examples": "要 覆 覃"
+ },
+ {
+   "key": "见",
+   "pinyin": "jiàn",
+   "meaning": "See",
+   "examples": "观 规 觉 览"
+ },
+ {
+   "key": "角",
+   "pinyin": "jiǎo",
+   "meaning": "Horn",
+   "examples": "解 触"
+ },
+ {
+   "key": "讠",
+   "pinyin": "yán",
+   "meaning": "Speech",
+   "examples": "计 讨 记 讲 识"
+ },
+ {
+   "key": "谷",
+   "pinyin": "gǔ",
+   "meaning": "Valley",
+   "examples": "豁"
+ },
+ {
+   "key": "豆",
+   "pinyin": "dòu",
+   "meaning": "Bean",
+   "examples": "豌 豉"
+ },
+ {
+   "key": "豕",
+   "pinyin": "shǐ",
+   "meaning": "Pig",
+   "examples": "豚 豪 象"
+ },
+ {
+   "key": "豸",
+   "pinyin": "zhì",
+   "meaning": "Legless insect",
+   "examples": "豹 豺 貌"
+ },
+ {
+   "key": "贝",
+   "pinyin": "bèi",
+   "meaning": "Shell",
+   "examples": "贞 负 贡 责 财"
+ },
+ {
+   "key": "赤",
+   "pinyin": "chì",
+   "meaning": "Red",
+   "examples": "赦 赫"
+ },
+ {
+   "key": "走",
+   "pinyin": "zǒu",
+   "meaning": "Walk",
+   "examples": "赶 起 超 越"
+ },
+ {
+   "key": "足",
+   "pinyin": "zú",
+   "meaning": "Foot",
+   "examples": "跃 跑 路 跳"
+ },
+ {
+   "key": "身",
+   "pinyin": "shēn",
+   "meaning": "Body",
+   "examples": "躬 躺 躲"
+ },
+ {
+   "key": "车",
+   "pinyin": "chē",
+   "meaning": "Cart",
+   "examples": "轧 轨 软 轮 轻"
+ },
+ {
+   "key": "辛",
+   "pinyin": "xīn",
+   "meaning": "Bitter",
+   "examples": "辜 辣 辞 辟"
+ },
+ {
+   "key": "辰",
+   "pinyin": "chén",
+   "meaning": "Day time",
+   "examples": "晨 辱 振 震"
+ },
+ {
+   "key": "辶",
+   "pinyin": "chuò",
+   "meaning": "Walk",
+   "examples": "边 达 过 运 远"
+ },
+ {
+   "key": "邑 阝",
+   "pinyin": "yì",
+   "meaning": "City",
+   "examples": "那 邦 邮 郊 邕"
+ },
+ {
+   "key": "酉",
+   "pinyin": "yǒu",
+   "meaning": "Wine vessel",
+   "examples": "酒 酱 酷"
+ },
+ {
+   "key": "釆",
+   "pinyin": "biàn",
+   "meaning": "Distinguish",
+   "examples": "采 釉 释"
+ },
+ {
+   "key": "里",
+   "pinyin": "lǐ",
+   "meaning": "Village/Unit of distance",
+   "examples": "重 野 量"
+ },
+ {
+   "key": "金 钅",
+   "pinyin": "jīn",
+   "meaning": "Metal",
+   "examples": "银 钉 钟 钥 鉴"
+ },
+ {
+   "key": "长",
+   "pinyin": "cháng",
+   "meaning": "Long",
+   "examples": "张 帐 账"
+ },
+ {
+   "key": "门",
+   "pinyin": "mén",
+   "meaning": "Gate",
+   "examples": "间 闪 闯 闭 闹"
+ },
+ {
+   "key": "阜⻏",
+   "pinyin": "fù",
+   "meaning": "Mound",
+   "examples": "陡 陆 防 际 队"
+ },
+ {
+   "key": "隶",
+   "pinyin": "lì",
+   "meaning": "Slave",
+   "examples": ""
+ },
+ {
+   "key": "隹",
+   "pinyin": "zhuī",
+   "meaning": "Short-tailed bird",
+   "examples": "难 雀 集 雇"
+ },
+ {
+   "key": "雨",
+   "pinyin": "yǔ",
+   "meaning": "Rain",
+   "examples": "雪 零 雷 雾"
+ },
+ {
+   "key": "青",
+   "pinyin": "qīng",
+   "meaning": "Blue/Green",
+   "examples": "靓 靖 静"
+ },
+ {
+   "key": "非",
+   "pinyin": "fēi",
+   "meaning": "Wrong",
+   "examples": "靠 靡"
+ },
+ {
+   "key": "面",
+   "pinyin": "miàn",
+   "meaning": "Face",
+   "examples": "靥 腼"
+ },
+ {
+   "key": "革",
+   "pinyin": "gé",
+   "meaning": "Leather",
+   "examples": "靴 鞋"
+ },
+ {
+   "key": "韦",
+   "pinyin": "wěi",
+   "meaning": "Soft leather",
+   "examples": "韧 韩 韫"
+ },
+ {
+   "key": "韭",
+   "pinyin": "jiǔ",
+   "meaning": "Leek",
+   "examples": "瀣"
+ },
+ {
+   "key": "音",
+   "pinyin": "yīn",
+   "meaning": "Sound",
+   "examples": "章 竟 歆 韵"
+ },
+ {
+   "key": "页",
+   "pinyin": "yè",
+   "meaning": "Page",
+   "examples": "顶 项 须 顺"
+ },
+ {
+   "key": "风",
+   "pinyin": "fēng",
+   "meaning": "Wind",
+   "examples": "飒 飓 飘"
+ },
+ {
+   "key": "飞",
+   "pinyin": "fēi",
+   "meaning": "Fly",
+   "examples": "-"
+ },
+ {
+   "key": "食 饣",
+   "pinyin": "shí",
+   "meaning": "Eat",
+   "examples": "饥 饮 饱 饰 餐"
+ },
+ {
+   "key": "首",
+   "pinyin": "shǒu",
+   "meaning": "Head",
+   "examples": "馗"
+ },
+ {
+   "key": "香",
+   "pinyin": "xiāng",
+   "meaning": "Fragrant",
+   "examples": "馥 馨"
+ },
+ {
+   "key": "马",
+   "pinyin": "mǎ",
+   "meaning": "Horse",
+   "examples": "驰 驹 骂 骇 驳"
+ },
+ {
+   "key": "骨",
+   "pinyin": "gǔ",
+   "meaning": "Bone",
+   "examples": "骸 骷 骰"
+ },
+ {
+   "key": "高",
+   "pinyin": "gāo",
+   "meaning": "High",
+   "examples": "髚"
+ },
+ {
+   "key": "髟",
+   "pinyin": "biāo",
+   "meaning": "Long hair",
+   "examples": "髦 鬃 鬓"
+ },
+ {
+   "key": "门/鬥",
+   "pinyin": "mén/dòu",
+   "meaning": "Fight",
+   "examples": "鬧 鬦"
+ },
+ {
+   "key": "鬯",
+   "pinyin": "chàng",
+   "meaning": "Sacrificial wine",
+   "examples": "-"
+ },
+ {
+   "key": "鬲",
+   "pinyin": "lì",
+   "meaning": "Cauldron",
+   "examples": "鬳 鬴 鬵 鬷"
+ },
+ {
+   "key": "鬼",
+   "pinyin": "guǐ",
+   "meaning": "Ghost",
+   "examples": "魂 魄 魅"
+ },
+ {
+   "key": "鱼",
+   "pinyin": "yú",
+   "meaning": "Fish",
+   "examples": "鲜 鲈 鲑"
+ },
+ {
+   "key": "鸟",
+   "pinyin": "niǎo",
+   "meaning": "Bird",
+   "examples": "鸡 鸦 鸭"
+ },
+ {
+   "key": "卤",
+   "pinyin": "lǔ",
+   "meaning": "Brine",
+   "examples": ""
+ },
+ {
+   "key": "鹿",
+   "pinyin": "lù",
+   "meaning": "Deer",
+   "examples": "麒 麓 麋"
+ },
+ {
+   "key": "麦",
+   "pinyin": "mài",
+   "meaning": "Wheat",
+   "examples": "麸"
+ },
+ {
+   "key": "麻",
+   "pinyin": "má",
+   "meaning": "Hemp",
+   "examples": "麾 磨 魔"
+ },
+ {
+   "key": "黄",
+   "pinyin": "huáng",
+   "meaning": "Yellow",
+   "examples": "横 磺 簧"
+ },
+ {
+   "key": "黍",
+   "pinyin": "shǔ",
+   "meaning": "Millet",
+   "examples": "黎 黏"
+ },
+ {
+   "key": "黑",
+   "pinyin": "hēi",
+   "meaning": "Black",
+   "examples": "墨 黔 默 黛"
+ },
+ {
+   "key": "黹",
+   "pinyin": "zhǐ",
+   "meaning": "Embroidery",
+   "examples": ""
+ },
+ {
+   "key": "黾",
+   "pinyin": "měng",
+   "meaning": "Frog",
+   "examples": "鼋"
+ },
+ {
+   "key": "鼎",
+   "pinyin": "dǐng",
+   "meaning": "Tripod",
+   "examples": ""
+ },
+ {
+   "key": "鼓",
+   "pinyin": "gǔ",
+   "meaning": "Drum",
+   "examples": ""
+ },
+ {
+   "key": "鼠",
+   "pinyin": "shǔ",
+   "meaning": "Rat",
+   "examples": ""
+ },
+ {
+   "key": "鼻",
+   "pinyin": "bí",
+   "meaning": "Nose",
+   "examples": "鼾 齁"
+ },
+ {
+   "key": "齐",
+   "pinyin": "qí",
+   "meaning": "Neat",
+   "examples": "挤 剂 济"
+ },
+ {
+   "key": "齿",
+   "pinyin": "chǐ",
+   "meaning": "Tooth",
+   "examples": "龄 龅"
+ },
+ {
+   "key": "龙",
+   "pinyin": "lóng",
+   "meaning": "Dragon",
+   "examples": "龚 笼 珑"
+ },
+ {
+   "key": "龟",
+   "pinyin": "guī",
+   "meaning": "Turtle",
+   "examples": ""
+ },
+ {
+   "key": "龠",
+   "pinyin": "yuè",
+   "meaning": "Flute",
+   "examples": ""
+ }
+];
 
   // ============================
   // 2. APP LOGIC
