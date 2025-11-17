@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Radical Trainer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+      background: #f2f2f7;
+      color: #111827;
+    }
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: radial-gradient(circle at top, #ffffff, #e5e7eb);
+    }
+    .app {
+      width: 100%;
+      max-width: 480px;
+      padding: 16px;
+      box-sizing: border-box;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 24px;
+      box-shadow: 0 14px 35px rgba(15, 23, 42, 0.12);
+      padding: 20px 20px 24px;
+      text-align: center;
+      backdrop-filter: blur(16px);
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 4px;
+    }
+    .title {
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    .small {
+      font-size: 0.8rem;
+      color: #6b7280;
+    }
+    .btn-icon {
+      border: none;
+      background: transparent;
+      font-size: 1.2rem;
+      cursor: pointer;
+      color: #6b7280;
+      padding: 4px;
+    }
+    .btn-icon:active {
+      transform: scale(0.95);
+    }
+    .character {
+      font-size: 6rem;
+      line-height: 1;
+      margin: 6px 0 4px;
+    }
+    .hint {
+      font-size: 0.9rem;
+      color: #9ca3af;
+      margin-bottom: 12px;
+    }
+    .details {
+      text-align: left;
+      font-size: 0.95rem;
+      margin-top: 10px;
+      border-top: 1px solid #e5e7eb;
+      padding-top: 10px;
+    }
+    .row {
+      display: flex;
+      margin-bottom: 4px;
+    }
+    .label {
+      width: 90px;
+      color: #6b7280;
+      font-size: 0.85rem;
+    }
+    .value {
+      flex: 1;
+      font-size: 0.95rem;
+    }
+    .footer {
+      margin-top: 10px;
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+    }
+    .btn {
+      border-radius: 999px;
+      border: 1px solid #d1d5db;
+      padding: 6px 16px;
+      font-size: 0.85rem;
+      background: #f9fafb;
+      cursor: pointer;
+    }
+    .btn.primary {
+      background: #2563eb;
+      color: white;
+      border-color: #2563eb;
+    }
+    .btn:active {
+      transform: scale(0.97);
+    }
+  </style>
+</head>
+<body>
+
+<div class="app" id="tap-area">
+  <div class="card">
+    <div class="header">
+      <div>
+        <div class="title">Radical Trainer</div>
+        <div class="small">Tap anywhere: reveal → next</div>
+      </div>
+      <button class="btn-icon" id="shuffle-btn" title="Reshuffle">
+        ⟳
+      </button>
+    </div>
+
+    <div class="character" id="char-display">犬</div>
+    <div class="hint" id="hint-text">Tap to reveal details</div>
+
+    <div class="details" id="details" style="display: none;">
+      <div class="row">
+        <div class="label">Pinyin</div>
+        <div class="value" id="pinyin"></div>
+      </div>
+      <div class="row">
+        <div class="label">Meaning</div>
+        <div class="value" id="meaning"></div>
+      </div>
+      <div class="row" id="examples-row" style="display:none;">
+        <div class="label">Examples</div>
+        <div class="value" id="examples"></div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <button class="btn" id="reveal-btn">Reveal</button>
+      <button class="btn primary" id="next-btn">Next</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // ============================
+  // 1. YOUR RADICALS DATABASE
+  // ============================
+  // You can replace or expand this array.
+  const radicals = [
+    { key: "犬", pinyin: "quǎn", meaning: "dog", examples: "狗 狠 狂" },
+    { key: "心", pinyin: "xīn", meaning: "heart; mind", examples: "想 怕 恨" },
+    { key: "言", pinyin: "yán", meaning: "speech; words", examples: "语 话 诗" },
+    { key: "木", pinyin: "mù", meaning: "wood; tree", examples: "林 果 森" },
+    { key: "火", pinyin: "huǒ", meaning: "fire", examples: "炎 烧 热" }
+  ];
+
+  // ============================
+  // 2. APP LOGIC
+  // ============================
+  let queue = [];
+  let current = null;
+  let revealed = false;
+
+  function shuffleArray(arr) {
+    const copy = arr.slice();
+    for (let i = copy.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [copy[i], copy[j]] = [copy[j], copy[i]];
+    }
+    return copy;
+  }
+
+  function initQueue() {
+    queue = shuffleArray(radicals);
+  }
+
+  function pickNext() {
+    if (queue.length === 0) initQueue();
+    current = queue.shift();
+    queue.push(current);
+    revealed = false;
+    render();
+  }
+
+  function render() {
+    const charEl = document.getElementById("char-display");
+    const detailsEl = document.getElementById("details");
+    const hintEl = document.getElementById("hint-text");
+
+    if (!current) return;
+
+    charEl.textContent = current.key;
+
+    if (!revealed) {
+      detailsEl.style.display = "none";
+      hintEl.textContent = "Tap to reveal details";
+      return;
+    }
+
+    // Reveal details
+    detailsEl.style.display = "block";
+    hintEl.textContent = "Tap for a new radical";
+
+    document.getElementById("pinyin").textContent = current.pinyin || "";
+    document.getElementById("meaning").textContent = current.meaning || "";
+
+    if (current.examples && current.examples.trim() !== "") {
+      document.getElementById("examples-row").style.display = "flex";
+      document.getElementById("examples").textContent = current.examples;
+    } else {
+      document.getElementById("examples-row").style.display = "none";
+    }
+  }
+
+  function handleTap() {
+    if (!revealed) {
+      revealed = true;
+      render();
+    } else {
+      pickNext();
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    if (!radicals.length) return;
+    initQueue();
+    pickNext();
+
+    document.getElementById("tap-area").addEventListener("click", function (e) {
+      if (e.target.tagName.toLowerCase() === "button") return;
+      handleTap();
+    });
+
+    document.getElementById("reveal-btn").addEventListener("click", function (e) {
+      e.stopPropagation();
+      if (!revealed) {
+        revealed = true;
+        render();
+      }
+    });
+
+    document.getElementById("next-btn").addEventListener("click", function (e) {
+      e.stopPropagation();
+      pickNext();
+    });
+
+    document.getElementById("shuffle-btn").addEventListener("click", function (e) {
+      e.stopPropagation();
+      initQueue();
+      pickNext();
+    });
+  });
+</script>
+
+</body>
+</html>
