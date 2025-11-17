@@ -88,6 +88,22 @@
       flex: 1;
       font-size: 1.2rem;
     }
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }    
+    /* Center the title + hint */
+    .header-center {
+      text-align: center;
+      width: 100%;
+    }
+    /* Keep shuffle button on the right */
+    .header .btn-icon {
+      position: absolute;
+      right: 0;
+    }
     .footer {
       margin-top: 10px;
       display: flex;
@@ -117,7 +133,7 @@
 <div class="app" id="tap-area">
   <div class="card">
     <div class="header">
-      <div>
+      <div class="header-center">
         <div class="title">Radical Trainer</div>
         <div class="small">Tap anywhere: reveal → next</div>
       </div>
